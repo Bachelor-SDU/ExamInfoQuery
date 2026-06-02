@@ -169,7 +169,7 @@ else:
         if not assign['partners']:
             st.warning("系统尚未给该科目分配对应的配对老师。")
         else:
-            st.write(f"{assign['partners']}信息（悬浮在灰色框右上角可一键复制）：")
+            st.write(f"您需要关注的教师信息（悬浮在灰色框右上角可一键复制）：")
             # 遍历该科目的所有配对老师
             for partner in assign['partners']:
                 p_role = partner['role']
@@ -177,7 +177,7 @@ else:
 
                 with st.expander(f"{p_role} : {p_info['name']}", expanded=True):
                     # 使用 st.code 生成纯净的自带复制按钮的代码块
-                    copy_text = f"电话：{p_info['phone']}\n邮箱：{p_info['email']}"
+                    copy_text = f"姓名：{p_info['name']}\n电话：{p_info['phone']}\n邮箱：{p_info['email']}"
                     st.code(copy_text, language=None)
 
         st.write("---")  # 科目分割线
